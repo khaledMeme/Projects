@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="imageMask" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="apple" translatesAutoresizingMaskIntoConstraints="NO" id="5ju-gJ-6cG" customClass="UIImageViewWithMask" customModule="imageMask" customModuleProvider="target">
+                                <rect key="frame" x="87" y="85" width="240" height="243"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="ImageToMask" value="Meme"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="18"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="0.0" height="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gNr-lF-pBR">
+                                <rect key="frame" x="132" y="418" width="150" height="60"/>
+                                <color key="backgroundColor" red="0.63703301461041362" green="0.64979535450545545" blue="0.70576221446700504" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="vcl-gR-Kp2"/>
+                                    <constraint firstAttribute="width" constant="150" id="yxt-A4-1DP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="PopUP">
+                                    <color key="titleColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="26b-yT-Zxz" kind="presentation" id="Yq0-A9-17K"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="gNr-lF-pBR" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="m3L-53-JzS"/>
+                            <constraint firstItem="gNr-lF-pBR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qPb-fF-2hk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="myView" destination="8bC-Xf-vdC" id="Gol-zV-FCq"/>
+                        <outlet property="myimage" destination="5ju-gJ-6cG" id="yoB-NN-eSJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="97.767857142857139"/>
+        </scene>
+        <!--Pop UpVC-->
+        <scene sceneID="aGj-Zp-1GE">
+            <objects>
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="26b-yT-Zxz" customClass="PopUpVC" customModule="imageMask" customModuleProvider="target" sceneMemberID="viewController">
+                    <visualEffectView key="view" opaque="NO" contentMode="scaleToFill" id="muS-cu-Zb5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="3wd-ZJ-hkE">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yeg-7B-49X">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                    <connections>
+                                        <action selector="BackwordButton:" destination="26b-yT-Zxz" eventType="touchUpInside" id="3Gh-f8-UTa"/>
+                                    </connections>
+                                </button>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EvF-fi-6H3" customClass="IBDesignableView" customModule="imageMask" customModuleProvider="target">
+                                    <rect key="frame" x="87" y="328" width="240" height="240"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="aZ6-rs-hiX">
+                                            <rect key="frame" x="30" y="54" width="180" height="172.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="It's free to join!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sxf-2R-NBD">
+                                                    <rect key="frame" x="0.0" y="0.0" width="180" height="23.5"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QzE-jm-cb0">
+                                                    <rect key="frame" x="0.0" y="38.5" width="180" height="34"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cTl-Fb-5RW">
+                                                    <rect key="frame" x="0.0" y="87.5" width="180" height="34"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TGE-fr-Dot">
+                                                    <rect key="frame" x="0.0" y="136.5" width="180" height="36"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <state key="normal" title="SignUp">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="signUPButtonPressed:" destination="26b-yT-Zxz" eventType="touchUpInside" id="3CA-Px-jwK"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.085423119369999995" green="0.26501229409999999" blue="0.28255030510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstItem="aZ6-rs-hiX" firstAttribute="leading" secondItem="EvF-fi-6H3" secondAttribute="leading" constant="30" id="LOi-KA-1bZ"/>
+                                        <constraint firstAttribute="width" constant="240" id="fiG-ux-SIW"/>
+                                        <constraint firstAttribute="trailing" secondItem="aZ6-rs-hiX" secondAttribute="trailing" constant="30" id="hNW-sD-eNe"/>
+                                        <constraint firstItem="aZ6-rs-hiX" firstAttribute="centerY" secondItem="EvF-fi-6H3" secondAttribute="centerY" constant="20" id="jWd-So-ZMg"/>
+                                        <constraint firstAttribute="height" constant="240" id="o8K-On-pLd"/>
+                                        <constraint firstItem="aZ6-rs-hiX" firstAttribute="centerX" secondItem="EvF-fi-6H3" secondAttribute="centerX" id="r8n-nZ-Xxc"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="20"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CnE-kd-daC" customClass="IBDesignableView" customModule="imageMask" customModuleProvider="target">
+                                    <rect key="frame" x="157" y="278" width="100" height="100"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.badge.plus.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="vJJ-3s-ANZ">
+                                            <rect key="frame" x="20" y="21.5" width="60" height="60"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="60" id="FXu-s5-s69"/>
+                                                <constraint firstAttribute="height" constant="60" id="cO6-5l-F7m"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.085423119369999995" green="0.26501229409999999" blue="0.28255030510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="100" id="DJp-9B-Q3b"/>
+                                        <constraint firstAttribute="height" constant="100" id="TeM-Dp-o9R"/>
+                                        <constraint firstItem="vJJ-3s-ANZ" firstAttribute="centerY" secondItem="CnE-kd-daC" secondAttribute="centerY" id="bjc-6b-JEm"/>
+                                        <constraint firstItem="vJJ-3s-ANZ" firstAttribute="centerX" secondItem="CnE-kd-daC" secondAttribute="centerX" id="xNE-cs-jqf"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="50"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="Yeg-7B-49X" secondAttribute="trailing" id="45g-j1-HxL"/>
+                                <constraint firstItem="EvF-fi-6H3" firstAttribute="centerY" secondItem="3wd-ZJ-hkE" secondAttribute="centerY" id="F80-gQ-Ftz"/>
+                                <constraint firstItem="Yeg-7B-49X" firstAttribute="leading" secondItem="3wd-ZJ-hkE" secondAttribute="leading" id="ZZs-RK-7Jh"/>
+                                <constraint firstItem="EvF-fi-6H3" firstAttribute="centerX" secondItem="3wd-ZJ-hkE" secondAttribute="centerX" id="h3k-vZ-8ii"/>
+                                <constraint firstItem="EvF-fi-6H3" firstAttribute="top" secondItem="CnE-kd-daC" secondAttribute="bottom" constant="-50" id="oPm-3L-W1J"/>
+                                <constraint firstItem="Yeg-7B-49X" firstAttribute="top" secondItem="3wd-ZJ-hkE" secondAttribute="top" id="osD-Ib-3MV"/>
+                                <constraint firstAttribute="bottom" secondItem="Yeg-7B-49X" secondAttribute="bottom" id="q3Y-0W-H9s"/>
+                                <constraint firstItem="CnE-kd-daC" firstAttribute="centerX" secondItem="3wd-ZJ-hkE" secondAttribute="centerX" id="t3e-Be-nYB"/>
+                            </constraints>
+                        </view>
+                        <blurEffect style="regular"/>
+                    </visualEffectView>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dOY-nx-zmg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1014.4927536231885" y="97.767857142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Meme" width="284" height="283.5"/>
+        <image name="apple" width="170.5" height="170.5"/>
+        <image name="person.badge.plus.fill" catalog="system" width="64" height="58"/>
+    </resources>
+</document>
