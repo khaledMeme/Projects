@@ -1,0 +1,20 @@
+PODS:
+  - BATabBarController (2.0.0):
+    - SnapKit
+  - SnapKit (5.0.1)
+
+DEPENDENCIES:
+  - BATabBarController (~> 2.0.0)
+
+SPEC REPOS:
+  trunk:
+    - BATabBarController
+    - SnapKit
+
+SPEC CHECKSUMS:
+  BATabBarController: a4e936e3ae20ea0e55fb20ea7e57eaca302d4e18
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+
+PODFILE CHECKSUM: 2b97816659f007ab86ea0142539adfed0bed973c
+
+COCOAPODS: 1.8.4
