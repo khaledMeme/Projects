@@ -19,8 +19,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
-        print(menuView.transform)
-        print(button.transform)
         closeMenu()
     }
     

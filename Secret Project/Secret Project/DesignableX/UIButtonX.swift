@@ -77,8 +77,15 @@ class UIButtonX: UIButton {
     override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
         alphaBefore = alpha
         
-        UIView.animate(withDuration: 0.2, delay: 0, options: .allowUserInteraction, animations: {
-            self.alpha = 0.4
+        UIView.animate(withDuration: 0.4, delay: 0, options: .allowUserInteraction, animations: {
+            if self.transform == .identity {
+                self.transform = CGAffineTransform(rotationAngle: 135 * (.pi / -180))
+                //self.backgroundColor = #colorLiteral(red: 0.7667552348, green: 0.2065340655, blue: 0.3149507405, alpha: 1)
+            }
+            else{
+                self.transform = .identity
+                //self.backgroundColor = #colorLiteral(red: 0.9591302276, green: 0.2575321794, blue: 0.3903427124, alpha: 1)
+            }
         })
         
         return true
@@ -86,7 +93,6 @@ class UIButtonX: UIButton {
     
     override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
         UIView.animate(withDuration: 0.35, delay: 0, options: .allowUserInteraction, animations: {
-            self.alpha = self.alphaBefore
         })
     }
     
