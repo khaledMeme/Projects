@@ -132,7 +132,7 @@
         <image name="location.circle.fill" catalog="system" width="64" height="60"/>
         <image name="magnifyingglass" catalog="system" width="64" height="56"/>
         <namedColor name="elementColor">
-            <color red="0.080799154940000006" green="0.21061640979999999" blue="0.22760966420000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.081000000238418579" green="0.210999995470047" blue="0.22800000011920929" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

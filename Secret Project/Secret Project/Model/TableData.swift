@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Data {
+struct TableData {
     let title: String
     let subTitle: String
     let time: Int
