@@ -96,9 +96,9 @@
 		86920CE623F21ACF0001B577 /* Flash Chat */ = {
 			isa = PBXGroup;
 			children = (
-				8655585323F2F3D900B9A2A8 /* Designable */,
 				86920CE723F21ACF0001B577 /* AppDelegate.swift */,
 				86920CE923F21ACF0001B577 /* SceneDelegate.swift */,
+				8655585323F2F3D900B9A2A8 /* Designable */,
 				86920CFD23F21AF50001B577 /* Model */,
 				86920CFC23F21AF10001B577 /* View */,
 				86920CFB23F21AED0001B577 /* Controller */,
