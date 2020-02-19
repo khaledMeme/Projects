@@ -11,6 +11,7 @@ import CoreLocation
 class ViewController: UIViewController {
     var weatherManager = WeatherManager()
     var locationManger = CLLocationManager()
+    var didDisplay = Array(repeating: false, count: 3)
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var menuView: UIViewX!
     @IBOutlet weak var button: UIButtonX!
@@ -28,6 +29,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
+        tableView.delegate = self
         searchTextField.delegate = self
         closeMenu()
         weatherManager.delegate = self
@@ -70,7 +72,7 @@ class ViewController: UIViewController {
     func dateAndWeather(){
         dateView.transform = CGAffineTransform(translationX: -300, y: 0)
         weatherView.transform = CGAffineTransform(translationX: 300, y: 0)
-        UIView.animate(withDuration: 0.5, delay: 1, usingSpringWithDamping: 0.7, initialSpringVelocity: 0, options: [], animations: {
+        UIView.animate(withDuration: 0.5, delay: 0.5, usingSpringWithDamping: 0.7, initialSpringVelocity: 0, options: [], animations: {
             self.dateView.transform = .identity
             self.weatherView.transform = .identity
         }, completion: nil)
@@ -95,6 +97,19 @@ extension ViewController: UITableViewDataSource {
     }
     
     
+}
+//MARK:- TableViewDelegate
+extension ViewController: UITableViewDelegate{
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let row = indexPath.row
+        if !didDisplay[row]{
+            didDisplay[row] = true
+            cell.transform = CGAffineTransform(translationX: 300, y: 0)
+            UIView.animate(withDuration: 0.4, delay: 0.5 + (0.1 * Double(row)), usingSpringWithDamping: 0.7, initialSpringVelocity: 0, options: [], animations: {
+                cell.transform = .identity
+            }, completion: nil)
+        }
+    }
 }
 //MARK:- WeatherManagerDelegate
 extension ViewController: WeatherManagerDelegate{

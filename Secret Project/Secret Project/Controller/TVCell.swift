@@ -16,7 +16,6 @@ class TVCell: UITableViewCell {
     @IBOutlet weak var APM: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
 }
