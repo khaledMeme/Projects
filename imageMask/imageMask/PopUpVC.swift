@@ -8,8 +8,15 @@
 
 import UIKit
 
-class PopUpVC: UIViewController {
+protocol PopUpDelegate {
+    func didAddEmail(with email: String)
+    func didUpdatePassword(with password: String)
+}
 
+class PopUpVC: UIViewController {
+    var delegate: PopUpDelegate?
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     override func viewDidLoad(){
         super.viewDidLoad()
         
@@ -21,6 +28,10 @@ class PopUpVC: UIViewController {
     }
     
     @IBAction func signUPButtonPressed(_ sender: UIButton) {
+        if let email = emailTextField.text, let password = passwordTextField.text {
+            delegate?.didAddEmail(with: email)
+            delegate?.didUpdatePassword(with: password)
+        }
         dismiss(animated: true, completion: nil)
     }
 }
